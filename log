@@ -1,0 +1,15 @@
+Fri Apr 17 06:37:24 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:75:5: error: expected expression before ‘return’
+   75 |     return NULL;
+      |     ^~~~~~
+hashmap.c:73:10: error: unused variable ‘pos’ [-Werror=unused-variable]
+   73 |     long pos=
+      |          ^~~
+hashmap.c:76:1: error: control reaches end of non-void function [-Werror=return-type]
+   76 | }
+      | ^
+cc1: all warnings being treated as errors
+f51a7f7
