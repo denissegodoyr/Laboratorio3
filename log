@@ -115,3 +115,13 @@ hashmap.c:79:5: error: format not a string literal and no format arguments [-Wer
       |     ^~~~~~
 cc1: all warnings being treated as errors
 f01e6bd
+Fri Apr 17 07:04:47 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:79:12: error: invalid type argument of unary ‘*’ (have ‘long int’)
+   79 |     printf(*pos) ;
+      |            ^~~~
+3b89e9e
