@@ -125,3 +125,24 @@ hashmap.c:79:12: error: invalid type argument of unary ‘*’ (have ‘long int
    79 |     printf(*pos) ;
       |            ^~~~
 3b89e9e
+Fri Apr 17 07:05:06 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:79:12: error: passing argument 1 of ‘printf’ from incompatible pointer type [-Wincompatible-pointer-types]
+   79 |     printf(&pos) ;
+      |            ^~~~
+      |            |
+      |            long int *
+In file included from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdio.h:970,
+                 from test.c:1:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/stdio2.h:116:32: note: expected ‘const char *’ but argument is of type ‘long int *’
+  116 | printf (const char *__restrict __fmt, ...)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+hashmap.c:79:12: error: format not a string literal and no format arguments [-Werror=format-security]
+   79 |     printf(&pos) ;
+      |            ^~~~
+cc1: all warnings being treated as errors
+96b7833
