@@ -77,13 +77,12 @@ Pair * searchMap(HashMap * map,  char * key) {
         return map->buckets[pos] ;
     }
     while (map->buckets[pos]->key!=NULL) {
-        pos++ ;
+        pos++%map->capacity ;
         if (is_equal(key, map->buckets[pos]->key)==1) {
             map->current=pos ;
             return map->buckets[pos] ;
         }
     }
-
     return NULL;
 }
 
