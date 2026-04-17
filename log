@@ -19,3 +19,22 @@ Fri Apr 17 06:37:46 PM UTC 2026:
  tests:  0|7
 total_score: 0/60
 8f42c63
+Fri Apr 17 06:52:19 PM UTC 2026: 
+ hashmap.c | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:76:21: error: assignment to ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Wint-conversion]
+   76 |         map->current=map->buckets[pos] ;
+      |                     ^
+hashmap.c:77:19: error: returning ‘long int’ from a function with return type ‘Pair *’ makes pointer from integer without a cast [-Wint-conversion]
+   77 |         return map->current ;
+      |                ~~~^~~~~~~~~
+hashmap.c:82:25: error: assignment to ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Wint-conversion]
+   82 |             map->current=map->buckets[pos] ;
+      |                         ^
+hashmap.c:83:23: error: returning ‘long int’ from a function with return type ‘Pair *’ makes pointer from integer without a cast [-Wint-conversion]
+   83 |             return map->current ;
+      |                    ~~~^~~~~~~~~
+f8f650b
