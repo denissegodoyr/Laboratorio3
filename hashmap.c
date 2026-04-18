@@ -66,9 +66,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     long pos=hash(key, map->capacity) ;
     
     if (map->buckets[pos]==NULL || map->buckets[pos]->key==NULL) {
-        map->buckets[pos]->key= (char *) malloc(sizeof(char)) ;
-        strcpy(map->buckets[pos]->key, key) ;
-        map->buckets[pos]->value=value ;
+        map->buckets[pos]=createPair(key, value) ;
         map->size++ ;
         return ;
     }
@@ -76,9 +74,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     while (map->buckets[pos]!=NULL || map->buckets[pos]->key!=NULL) {
         pos=(pos+1)%map->capacity ;
     }
-    map->buckets[pos]->key= (char *) malloc(sizeof(char)) ;
-    strcpy(map->buckets[pos]->key, key) ;
-    map->buckets[pos]->value=value ;
+    map->buckets[pos]=createPair(key, value) ;
     map->size++ ;
     return ;
     
@@ -113,7 +109,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 // Recuerde actualizar la variable size.
 
 void eraseMap(HashMap * map,  char * key) {    
-
+    
 
 }
 
@@ -122,7 +118,7 @@ void eraseMap(HashMap * map,  char * key) {
 // Recuerde actualizar el índice.
 
 Pair * firstMap(HashMap * map) {
-
+    
     return NULL;
 }
 
