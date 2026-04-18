@@ -148,16 +148,12 @@ Pair * firstMap(HashMap * map) {
         return map->buckets[pos] ; 
     }
 
-    while (map->buckets[pos]==NULL) {
+    while (map->buckets[pos]==NULL || map->buckets[pos]->key==NULL) {
         pos++ ;
     }
-    if (map->buckets[pos]->key!=NULL) {
-        map->current=pos ;
-        return map->buckets[pos] ;
-    }
+    map->current=pos ;
+    return map->buckets[pos] ;
 
-    
-    return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
