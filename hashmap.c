@@ -156,7 +156,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    if (map==NULL) return NULL ;
+    if (map==NULL || map->size==0) return NULL ;
     long aux=map->current ;
     long pos=map->current ;
 
