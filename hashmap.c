@@ -160,6 +160,8 @@ Pair * nextMap(HashMap * map) {
     long aux=map->current ;
     long pos=map->current ;
 
+    if (pos==map->capacity-1) return NULL ;
+    
     pos=(pos+1)%map->capacity ;
     if (map->buckets[pos]!=NULL && map->buckets[pos]->key!=NULL) {
         map->current=pos ;
