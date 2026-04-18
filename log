@@ -247,3 +247,26 @@ hashmap.c:54:1: error: control reaches end of non-void function [-Werror=return-
       | ^
 cc1: all warnings being treated as errors
 8d9da22
+Sat Apr 18 06:18:05 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:49:46: error: expected ‘)’ before ‘capacity’
+   49 |     map->buckets=(Pair *) calloc(sizeof(Pair*capacity)) ;
+      |                                        ~     ^~~~~~~~
+      |                                              )
+hashmap.c:49:27: error: too few arguments to function ‘calloc’
+   49 |     map->buckets=(Pair *) calloc(sizeof(Pair*capacity)) ;
+      |                           ^~~~~~
+In file included from test.c:2:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdlib.h:675:14: note: declared here
+  675 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+hashmap.c: In function ‘insertMap’:
+hashmap.c:66:10: error: unused variable ‘pos’ [-Werror=unused-variable]
+   66 |     long pos=hash(key, map->capacity) ;
+      |          ^~~
+cc1: all warnings being treated as errors
+8827503
