@@ -45,8 +45,12 @@ int is_equal(void* key1, void* key2){
 // Inicialice el índice current a -1.
 
 HashMap * createMap(long capacity) {
-
-    return NULL;
+    HashMap map ;
+    map->buckets=(HashMap *) calloc(sizeof(HashMap*capacity)) ;
+    map->size=0 ;
+    map->capacity= capacity ;
+    map->current= -1 ;
+    return map ;
 }
 
 // 2. Implemente la función void insertMap(HashMap * map, char * key, void * value). 
@@ -59,7 +63,10 @@ HashMap * createMap(long capacity) {
 // No inserte claves repetidas. Recuerde que el arreglo es circular. Recuerde actualizar la variable size.
 
 void insertMap(HashMap * map, char * key, void * value) {
+    long pos=hash(key, map->capacity) ;
+    
 
+    
 }
 
 // 3. Implemente la función Pair * searchMap(HashMap * map, char * key), la cual retorna el Pair asociado a la clave ingresada. 

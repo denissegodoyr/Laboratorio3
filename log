@@ -205,3 +205,45 @@ Fri Apr 17 07:17:20 PM UTC 2026:
  tests:  3|6
 total_score: 10/60
 34ca933
+Sat Apr 18 06:14:10 PM UTC 2026: 
+ hashmap.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:49:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   49 |     map->buckets=(HashMap *) calloc(sizeof(HashMap*capacity)) ;
+      |        ^~
+hashmap.c:49:52: error: expected ‘)’ before ‘capacity’
+   49 |     map->buckets=(HashMap *) calloc(sizeof(HashMap*capacity)) ;
+      |                                           ~        ^~~~~~~~
+      |                                                    )
+hashmap.c:49:30: error: too few arguments to function ‘calloc’
+   49 |     map->buckets=(HashMap *) calloc(sizeof(HashMap*capacity)) ;
+      |                              ^~~~~~
+In file included from test.c:2:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdlib.h:675:14: note: declared here
+  675 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+hashmap.c:50:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   50 |     map->size=0 ;
+      |        ^~
+hashmap.c:51:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   51 |     map->capacity= capacity ;
+      |        ^~
+hashmap.c:52:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   52 |     map->current= -1 ;
+      |        ^~
+hashmap.c:53:12: error: incompatible types when returning type ‘HashMap’ {aka ‘struct HashMap’} but ‘HashMap *’ {aka ‘struct HashMap *’} was expected
+   53 |     return map ;
+      |            ^~~
+hashmap.c: In function ‘insertMap’:
+hashmap.c:66:10: error: unused variable ‘pos’ [-Werror=unused-variable]
+   66 |     long pos=hash(key, map->capacity) ;
+      |          ^~~
+hashmap.c: In function ‘createMap’:
+hashmap.c:54:1: error: control reaches end of non-void function [-Werror=return-type]
+   54 | }
+      | ^
+cc1: all warnings being treated as errors
+8d9da22
