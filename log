@@ -403,3 +403,8 @@ hashmap.c:79:27: error: assignment to ‘char *’ from incompatible pointer typ
    79 |     map->buckets[pos]->key= (Pair **) malloc(sizeof(Pair)) ;
       |                           ^
 f677c56
+Sat Apr 18 06:52:16 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|0
+c45c5b7
