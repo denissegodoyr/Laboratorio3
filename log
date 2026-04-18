@@ -270,3 +270,18 @@ hashmap.c:66:10: error: unused variable ‘pos’ [-Werror=unused-variable]
       |          ^~~
 cc1: all warnings being treated as errors
 8827503
+Sat Apr 18 06:18:38 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:49:17: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Wincompatible-pointer-types]
+   49 |     map->buckets=(Pair *) calloc(capacity, sizeof(Pair)) ;
+      |                 ^
+hashmap.c: In function ‘insertMap’:
+hashmap.c:66:10: error: unused variable ‘pos’ [-Werror=unused-variable]
+   66 |     long pos=hash(key, map->capacity) ;
+      |          ^~~
+cc1: all warnings being treated as errors
+ac55e10
