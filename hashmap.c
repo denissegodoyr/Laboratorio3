@@ -147,7 +147,14 @@ Pair * firstMap(HashMap * map) {
         map->current=pos ;
         return map->buckets[pos] ; 
     }
-    
+
+    while (map->buckets[pos]==NULL) {
+        pos++ ;
+    }
+    if (map->buckets[pos]->key!=NULL) {
+        map->current=pos ;
+        return map->buckets[pos] ;
+    }
 
     
     return NULL;
