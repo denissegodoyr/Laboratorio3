@@ -354,3 +354,21 @@ In function ‘strcpy’,
 /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/string_fortified.h:81:10: note: in a call to built-in function ‘__builtin_strcpy’
 cc1: all warnings being treated as errors
 ea71ad9
+Sat Apr 18 06:50:18 PM UTC 2026: 
+ hashmap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:69:34: error: ‘Pairs’ undeclared (first use in this function); did you mean ‘Pair’?
+   69 |         map->buckets[pos]->key= (Pairs **) malloc(sizeof(Pairs)) ;
+      |                                  ^~~~~
+      |                                  Pair
+hashmap.c:69:34: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:69:42: error: expected expression before ‘)’ token
+   69 |         map->buckets[pos]->key= (Pairs **) malloc(sizeof(Pairs)) ;
+      |                                          ^
+hashmap.c:79:38: error: expected expression before ‘)’ token
+   79 |     map->buckets[pos]->key= (Pairs **) malloc(sizeof(Pairs)) ;
+      |                                      ^
+1de0e13
