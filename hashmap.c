@@ -116,7 +116,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 void eraseMap(HashMap * map,  char * key) {    
     long pos=hash(key, map->capacity) ;
 
-    if (search(map, key)==NULL) {
+    if (searchMap(map, key)==NULL) {
         return ;
     }
     
