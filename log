@@ -413,3 +413,18 @@ Sat Apr 18 07:14:59 PM UTC 2026:
  1 file changed, 2 insertions(+), 6 deletions(-)
  tests:  0|0
 572d5af
+Sat Apr 18 07:21:31 PM UTC 2026: 
+ hashmap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:68:9: error: implicit declaration of function ‘search’; did you mean ‘bsearch’? [-Wimplicit-function-declaration]
+   68 |     if (search(map, key)!=NULL) {
+      |         ^~~~~~
+      |         bsearch
+hashmap.c:68:25: error: comparison between pointer and integer [-Werror]
+   68 |     if (search(map, key)!=NULL) {
+      |                         ^~
+cc1: all warnings being treated as errors
+4bf0f8c
