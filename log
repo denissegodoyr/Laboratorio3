@@ -372,3 +372,21 @@ hashmap.c:79:38: error: expected expression before ‘)’ token
    79 |     map->buckets[pos]->key= (Pairs **) malloc(sizeof(Pairs)) ;
       |                                      ^
 1de0e13
+Sat Apr 18 06:50:56 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:69:34: error: ‘Pairs’ undeclared (first use in this function); did you mean ‘Pair’?
+   69 |         map->buckets[pos]->key= (Pairs *) malloc(sizeof(Pairs)) ;
+      |                                  ^~~~~
+      |                                  Pair
+hashmap.c:69:34: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:69:41: error: expected expression before ‘)’ token
+   69 |         map->buckets[pos]->key= (Pairs *) malloc(sizeof(Pairs)) ;
+      |                                         ^
+hashmap.c:79:37: error: expected expression before ‘)’ token
+   79 |     map->buckets[pos]->key= (Pairs *) malloc(sizeof(Pairs)) ;
+      |                                     ^
+238067b
