@@ -595,3 +595,26 @@ Sat Apr 18 08:35:19 PM UTC 2026:
  tests:  16|1
 total_score: 50/60
 4c9efde
+Sun Apr 19 08:48:32 PM UTC 2026: 
+ hashmap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:205:17: error: ‘aux’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  205 |         if  (aux->buckets[i]!=NULL && aux->buckets[i]->key!=NULL) {
+      |                 ^~
+      |              (* )
+hashmap.c:205:42: error: ‘aux’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  205 |         if  (aux->buckets[i]!=NULL && aux->buckets[i]->key!=NULL) {
+      |                                          ^~
+      |                                       (* )
+hashmap.c:206:31: error: ‘aux’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  206 |             insertMap(map, aux->key, aux->value) ;
+      |                               ^~
+      |                            (* )
+hashmap.c:206:41: error: ‘aux’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  206 |             insertMap(map, aux->key, aux->value) ;
+      |                                         ^~
+      |                                      (* )
+b8464a3
