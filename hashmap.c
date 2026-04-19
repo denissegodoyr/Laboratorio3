@@ -202,7 +202,7 @@ void enlarge(HashMap * map) {
     map->size=0 ;
     
     for (long i=0; i<map->capacity; i++) { 
-        if  (aux->buckets[i]!=NULL && aux->buckets[i]->key!=NULL) {
+        if  (aux[i]!=NULL && aux[i]->key!=NULL) {
             insertMap(map, aux->key, aux->value) ;
         } 
     }
